@@ -24,11 +24,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 								Resource loading
 	
  * now create simple pojo class.
- * for getter , setter and constructor sortcut source-getter/setter.
+ * for getter , setter and constructor shortcut source-getter/setter.
  * 
  * then create the .xml file for configuration . write click on src/main/java-new-file and write file name with extension and add default code manually.
  * 
  * then create the bean of pojo and create object from ioc with the help of ApplicationContext interface.
+ * 
+ * then cerates bean with three different type.
  */
 public class App 
 {
@@ -38,5 +40,9 @@ public class App
         ApplicationContext context=new ClassPathXmlApplicationContext("config.xml");
         StudentModel s1=(StudentModel)context.getBean("student1");
         System.out.println(s1);
+        StudentModel s2=(StudentModel)context.getBean("student2");
+        System.out.println(s2);
+        StudentModel s3=(StudentModel)context.getBean("student3");
+        System.out.println(s3);
     }
 }
