@@ -1,4 +1,4 @@
-package com.springcore1;
+package com.springcore_NonPrimitive;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

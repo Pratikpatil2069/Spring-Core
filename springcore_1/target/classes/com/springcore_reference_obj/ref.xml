@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           https://www.springframework.org/schema/context/spring-context.xsd">
+           
+        <!-- this is our beans -->  
+        <!--this is 1st method-->
+       <bean class="com.springcore_reference_obj.A" name="A">
+       		<property name="x" value="10"/>
+       </bean>
+       
+        <bean class="com.springcore_reference_obj.B" name="B">
+       		<property name="y" value="20"/>
+       		<property name="obj"><ref bean="A"/></property>
+       </bean>
+       
+        <!--this is 2nd method-->
+       <bean class="com.springcore_reference_obj.A" name="C">
+       		<property name="x" value="10"/>
+       </bean>
+       
+        <bean class="com.springcore_reference_obj.B" name="D">
+       		<property name="y" value="20"/>
+       		<property name="obj" ref="A"/>
+       </bean>
+       
+        <!--this is 3rd method-->
+       <bean class="com.springcore_reference_obj.A" name="E" p:x="10" />      
+        <bean class="com.springcore_reference_obj.B" name="F" p:y="20" p:obj-ref="A"/>
+       		
+</beans>
