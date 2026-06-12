@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           https://www.springframework.org/schema/context/spring-context.xsd">
+           
+        
+        
+        
+<!-- this is our beans -->       
+<!--This is 2rd method-->
+       <bean class="com.springcore_constructor_injection.A" name="A">
+        	<constructor-arg name="x">
+        		<value>10</value>
+        	</constructor-arg>
+        	
+        </bean>
+        
+       <bean  class="com.springcore_constructor_injection.StudentModel1" name="student1">
+       		<constructor-arg name="name">
+       			<value>pratik</value>
+       		</constructor-arg>
+       		
+       		<constructor-arg name="obj">
+       			<ref bean="A" />
+       		</constructor-arg>
+       		
+       		<constructor-arg name="friends">
+       			<list>
+       				<value>rohan</value>
+       				<value>pranav</value>
+       				<value>altaf</value>
+       			</list>
+       		</constructor-arg>
+       </bean>
+<!--This is 2rd method-->      
+       <bean class="com.springcore_constructor_injection.A" name="A1">
+        	<constructor-arg name="x" value="10"/>
+        </bean>
+
+       <bean  class="com.springcore_constructor_injection.StudentModel1" name="student2">
+       		<constructor-arg name="name" value="Pratik"/>
+       			
+       		<constructor-arg name="obj"><ref bean="A1"/></constructor-arg>
+       		
+       		<constructor-arg name="friends">
+       			<list>
+       				<value>rohan</value>
+       				<value>pranav</value>
+       				<value>altaf</value>
+       			</list>
+       		</constructor-arg>
+      
+       </bean>
+       
+<!--This is 3rd method-->
+       <bean class="com.springcore_constructor_injection.A" name="A2" c:x="10"/>
+        
+      <bean id="student3"
+      class="com.springcore_constructor_injection.StudentModel1">
+
+    <constructor-arg name="name" value="Pratik"/>
+
+    <constructor-arg name="obj" ref="A2"/>
+
+    <constructor-arg name="friends">
+        <list>
+            <value>rohan</value>
+            <value>pranav</value>
+            <value>altaf</value>
+        </list>
+    </constructor-arg>
+
+</bean>
+		
+
+</beans>
