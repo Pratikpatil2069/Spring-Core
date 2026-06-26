@@ -13,3 +13,4 @@ public class App {
 	}
 
 }
+// bean life cycle using xml file.

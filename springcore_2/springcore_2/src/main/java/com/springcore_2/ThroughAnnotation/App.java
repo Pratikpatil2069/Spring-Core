@@ -1,6 +1,8 @@
 package com.springcore_2.ThroughAnnotation;
 
 import org.springframework.context.support.AbstractApplicationContext;
+
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
@@ -13,3 +15,4 @@ public class App {
 	}
 
 }
+// bean life cycle using Annotation.
